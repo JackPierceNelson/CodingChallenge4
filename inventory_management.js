@@ -19,7 +19,7 @@ const inventory = [
 
 // Task 2: Create a Function to Display Product Details
 
-function displayProductDetails(product) {
+function displayProductDetails(product) { // 
     let i=0;
     while (i < product.length) {
         if (product[i].quantity <= product[i].lowStockLevel) {
