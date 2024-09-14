@@ -51,6 +51,20 @@ if (Product.quantity == 0) {
 const Smartphone =  inventory.find(Product => Product.name === "Smartphone");
 updateStock(Smartphone, 10);
 
+// Task 4:Create a Function to Check Low Stock Products
+
+function checkLowStock(inventory) {
+    console.log("Low Stocked Products:");
+    let lowStockFound = false;
+    inventory.forEach(Product => {if (Product.quantity <= Product.lowStockLevel){console.log(`${Product.name}(Quantity: ${Product.quantity}, Low Stock Level: ${Product.lowStockLevel})`);
+    lowStockFound = true;
+}});
+if (!lowStockFound) {
+    console.log("No products currently low in stock.");
+}
+}
+checkLowStock(inventory);
+
 
 
 
