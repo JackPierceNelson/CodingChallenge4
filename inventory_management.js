@@ -30,9 +30,26 @@ console.log(`Status: ${stockStatus}`);
 }
 
 inventory.forEach(Product => displayProductDetails(Product))
+
+
 // Task 3: Create a Function to Update Product Stock After Sales
 
+function updateStock(Product, unitsSold) {
+    if (unitsSold > Product.quantity) {
+        console.log(`Cannot Sell ${unitsSold} because ${Product.quantity} available.`);
+        return;
+    }
 
+Product.quantity = Product.quantity - unitsSold;
+console.log(`Sold ${unitsSold} of ${Product.name}`);
+if (Product.quantity == 0) {
+    console.log(`${Product.name} is out of stock.`);
+} else if (Product.quantity <= product.lowStockLevel) {
+    console.log(`${Product.name} is low in stock.`);
+}
+}
+const Smartphone =  inventory.find(Product => Product.name === "Smartphone");
+updateStock(Smartphone, 10);
 
 
 
