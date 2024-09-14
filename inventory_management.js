@@ -11,20 +11,27 @@ const inventory = [
 
 // Task 2: Create a Function to Display Product Details
 
-const stockStatus = (quantity > lowStockLevel) ? "In Stock" : "Low Stock";
+function displayProductDetails(Product) {
+    let stockStatus
+    if (Product.quantity <= Product.lowStockLevel){
+        stockStatus = "Low Stock";
+    }
+    else {
+        stockStatus = "In Stock";
+    }
+    
 
-function displayProductDetails(inventory) {
-    return stockStatus;
+
+console.log(`Product: ${Product.name}`);
+console.log(`Price: ${Product.price}`);
+console.log(`Quantity: ${Product.quantity}`);
+console.log(`Low Stock Level:${Product.lowStockLevel}`);
+console.log(`Status: ${stockStatus}`);
 }
 
-console.log(inventory[0].name);
-console.log(inventory[0].price);
-console.log(inventory[0].quantity);
-console.log(inventory[0].lowStockLevel);
-
+inventory.forEach(Product => displayProductDetails(Product))
 // Task 3: Create a Function to Update Product Stock After Sales
 
-function updateStock
 
 
 
@@ -52,20 +59,4 @@ function updateStock
 
 
 
-// Task 5: Create a function to caluclate total inventory value
 
-function calculateInventoryValue(inventory) {
-    let totalValue = inventory.reduce((price, quantity) => price * quantity, 0);
-    console.log(`Total Value: $${totalValue}`);
-}
-
-
-// Task 6: Create a Function to Process a Sale
-
-function processSale(inventory) {
-    if (product) {
-        
-    } else {
-        
-    }
-}
